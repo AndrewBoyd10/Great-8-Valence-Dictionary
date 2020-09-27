@@ -688,7 +688,7 @@ proc_pretrained_vec <- function(p_vec) {
   names(glove) <- names
   return(glove)
 }
-g6b_300 <- scan(file = "F:/Projects 2/Job Performance and Leadership/6. Text Analysis 2/1. Rater Effects/Working Analyses - Dict/glove.6B/glove.42B.300d.txt", what="", sep="\n")
+g6b_300 <- scan(file = "LOCATION/glove.42B.300d.txt", what="", sep="\n")
 # call the function to convert the raw GloVe vector to data.frame
 glove.300 <- proc_pretrained_vec(g6b_300)  # this is the actual function call
 dim (glove.300)
@@ -1377,7 +1377,7 @@ modeling_df <- cbind (outcome_df[,2], df)
 colnames(modeling_df) <- paste(colnames(modeling_df), "_rf", sep = "")
 colnames(modeling_df) <- gsub(" ", "__", colnames(modeling_df))
 colnames(modeling_df)[1] <- 'Ratee_G2_num'
-modeling_df <- modeling_df [,(grepl("doesnâ", colnames(modeling_df))==FALSE)]
+modeling_df <- modeling_df [,(grepl("doesnÃ¢", colnames(modeling_df))==FALSE)]
 modeling_df <- as.data.frame (apply (modeling_df, 2, scale)) #normalizing entire dataset
 modeling_df [1:5, 1:10]
 dim (modeling_df)
